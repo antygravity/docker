@@ -35,7 +35,7 @@ RUN which android
 RUN echo "no" | android create avd --force -n test -t android-22 --abi x86
 
 #KVM
-RUN /opt/tools/kvm-mknod.sh && kvm-ok
+RUN /opt/tools/kvm-mknod.sh
 
 #Gradle
 RUN wget https://services.gradle.org/distributions/gradle-2.12-bin.zip && unzip gradle-2.12-bin.zip && mv gradle-2.12 /opt/
