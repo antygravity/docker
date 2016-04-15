@@ -4,10 +4,7 @@ FROM ubuntu:14.04.4
 
 MAINTAINER Marcin L "antygravity@wp.pl"
 
-ENV ANDROID_BUILD_TOOLS_VERSION 23.0.2
-ENV ANDROID_APIS android-23
-
-# Install java7
+# Install java8
 RUN apt-get install -y software-properties-common && add-apt-repository -y ppa:webupd8team/java && apt-get update
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 RUN apt-get install -y oracle-java8-installer
