@@ -1,7 +1,7 @@
 # android-x86-java8
 
-This docker is to build Android Gradle project with Java 7.
-It is available on Docker Hub https://registry.hub.docker.com/u/jacekmarchwicki/android/ .
+This docker is to build Android Gradle project with Java 8.
+It is available on Docker Hub https://hub.docker.com/r/antygravity/android-x86/.
 
 Contains:
 
