@@ -35,6 +35,6 @@ docker push antygravity/android-x86
 Change directory to your project directory, than run:
 
 ```bash
-docker run --privileged --interactive --volume=$(pwd)/opt/workspace --workdir=/opt/workspace --rm antygravity/android-x86 /bin/sh -c 'emulator-x86 -avd test -no-skin -no-audio -no-window & /opt/tools/android-wait-for-emulator.sh && gradle clean uninstallAll connectedCheck build'
+docker run --privileged --interactive --volume=$(pwd):/opt/workspace --workdir=/opt/workspace --rm antygravity/android-x86 /bin/sh -c 'emulator-x86 -avd test -no-skin -no-audio -no-window & /opt/tools/android-wait-for-emulator.sh && gradle clean uninstallAll connectedCheck build'
 ```
 
