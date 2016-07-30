@@ -23,7 +23,7 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 COPY tools /opt/tools
 ENV PATH ${PATH}:/opt/tools
 ENV adb kill-server
-RUN ["/opt/tools/android-accept-licenses.sh", "android update sdk --all --force --no-ui --filter platform-tools,build-tools-23.0.2,build-tools-23.0.3,android-23,android-22,addon-google_apis_x86-google-23,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services,sys-img-x86-android-22"]
+RUN ["/opt/tools/android-accept-licenses.sh", "android update sdk --all --force --no-ui --filter platform-tools,build-tools-23.0.2,build-tools-23.0.3,build-tools-24.0.1,android-23, android-24,android-22,addon-google_apis_x86-google-23,addon-google_apis_x86-google-24,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services,sys-img-x86-android-22"]
 
 RUN which adb
 RUN which android
@@ -35,8 +35,8 @@ RUN echo "no" | android create avd --force -n test -t android-22 --abi x86
 RUN /opt/tools/kvm-mknod.sh
 
 #Gradle
-RUN wget https://services.gradle.org/distributions/gradle-2.12-bin.zip && unzip gradle-2.12-bin.zip && mv gradle-2.12 /opt/
-ENV GRADLE_HOME /opt/gradle-2.12
+RUN wget https://services.gradle.org/distributions/gradle-2.14.1-bin.zip && unzip gradle-2.14.1-bin.zip && mv gradle-2.14.1 /opt/
+ENV GRADLE_HOME /opt/gradle-2.14.1
 ENV PATH ${PATH}:${GRADLE_HOME}/bin
 ENV gradle -version
 
