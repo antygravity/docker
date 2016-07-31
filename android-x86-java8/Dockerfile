@@ -5,9 +5,11 @@ FROM ubuntu:14.04.4
 MAINTAINER Marcin L "antygravity@wp.pl"
 
 # Install java8
-RUN apt-get install -y software-properties-common && add-apt-repository -y ppa:webupd8team/java && apt-get update
+RUN apt-get update && apt-get install -y software-properties-common && apt-get clean && rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN add-apt-repository -y ppa:webupd8team/java
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-RUN apt-get install -y oracle-java8-installer
+RUN apt-get update && apt-get install -y oracle-java8-installer && apt-get clean && rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 
 # Install Deps
 RUN apt-get update && apt-get install -y --force-yes expect git unzip wget  python curl lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
