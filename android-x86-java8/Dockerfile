@@ -4,7 +4,7 @@ FROM ubuntu:14.04.4
 
 MAINTAINER Marcin L "antygravity@wp.pl"
 
-# Install java8
+# Install java 8
 RUN apt-get update && apt-get install -y software-properties-common && apt-get clean && rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN add-apt-repository -y ppa:webupd8team/java
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
