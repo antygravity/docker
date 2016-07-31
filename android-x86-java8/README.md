@@ -6,8 +6,8 @@ It is available on Docker Hub https://hub.docker.com/r/antygravity/android-x86/.
 Contains:
 
 * Android SDK: r24.4.1
-* Build tools: 23.0.2, 23.0.3
-* Android API: 22, 23
+* Build tools: 23.0.2, 23.0.3, 24.0.1
+* Android API: 22, 23, 24
 * Support maven repository
 * Google maven repository
 * x86 emulator: v22
